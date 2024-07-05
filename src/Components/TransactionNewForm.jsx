@@ -1,9 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate  } from 'react-router-dom'
 
 const API = import.meta.env.VITE_API_URL
 
 export default function TransactionNewForm() {
+
+    const [ transactions, setTransactions ] = useState([])
+
+    useEffect(() => {
+        fetch(`${API}/transactions`)
+        .then((response) => response.json())
+        .then((responseJSON) => setTransactions(responseJSON))
+        .catch((error) => console.error(error));
+    }, [])
 
     let navigate = useNavigate()
 
@@ -34,11 +43,12 @@ export default function TransactionNewForm() {
             }
         })
         .then(() => {
-            navigate("/transactions")
+            navigate(`/transactions/${transactions.length + 1}`)
         })
         .catch((error) => console.error(error))
     }
-    
+
+
     function handleSubmit(e) {
         e.preventDefault()
         addTransaction()
