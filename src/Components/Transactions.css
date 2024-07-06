@@ -1,0 +1,17 @@
+.Transactions__header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    span{
+        width: 200px;
+    }
+}
+
+.Transactions__total-amount {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+}
+.Transactions__total-amount-number {
+    font-weight: 900;
+}

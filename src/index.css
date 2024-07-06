@@ -3,7 +3,7 @@ html {
   }
   
   body {
-    font-family: monospace;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     height: 100%;
     overflow: auto;
     margin: 10;

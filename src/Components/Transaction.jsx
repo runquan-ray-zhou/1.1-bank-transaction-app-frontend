@@ -16,25 +16,25 @@ export default function Transaction({ transaction }) {
     }
 
     return (
-        <tr className="Transaction">
-            <td>
+        <div className="Transaction">
+            <span>
             <p>{transaction.date}</p>
-            </td>
-            <td>
-            <Link to={`/transactions/${transaction.id}`}>{transaction.item_name}</Link>
-            </td>
-            <td>
+            </span>
+            <span>
             <p>{transaction.from}</p>
-            </td>
-            <td>
+            </span>
+            <span>
+            <Link to={`/transactions/${transaction.id}`}>{transaction.item_name}</Link>
+            </span>
+            <span>
             <p>{transaction.category}</p>
-            </td>
-            <td>
+            </span>
+            <span>
             <p>{transaction.amount}</p>
-            </td>
-            <td>
+            </span>
+            <span>
             <button onClick={ handleDelete }>Delete</button>
-            </td>
-        </tr>
+            </span>
+        </div>
     )
 }
