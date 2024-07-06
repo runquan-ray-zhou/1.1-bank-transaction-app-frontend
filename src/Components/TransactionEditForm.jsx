@@ -23,9 +23,13 @@ export default function TransactionEditForm() {
         setTransactionDetails({...transaction, [event.target.id]: event.target.value})
     } 
 
-    const handleNumberChange = (event) => {
+    function handleNumberChange(event){
         setTransactionDetails({ ...transaction, [event.target.id]: Number(event.target.value) })
       }
+
+    function handleDateChange(event) {
+        setTransactionDetails({...transaction, [event.target.id]: event.target.value})
+    }
 
       useEffect(() => {
         fetch(`${API}/transactions/${id}`)
@@ -76,9 +80,9 @@ export default function TransactionEditForm() {
                 <br />
                     <input
                     id="date"
-                    type="text"
+                    type="date"
                     value={transaction.date}
-                    onChange={handleTextChange}
+                    onChange={handleDateChange}
                     placeholder="date"
                     required
                     />
