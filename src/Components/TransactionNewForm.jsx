@@ -135,6 +135,7 @@ export default function TransactionNewForm() {
                 </div>
                 <br />
                     <select
+                    className='newTransaction__select'
                     id="category"
                     name="category"
                     onChange={handleCategoryChange}

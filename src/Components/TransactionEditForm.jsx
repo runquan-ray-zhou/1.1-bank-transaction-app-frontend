@@ -168,6 +168,7 @@ export default function TransactionEditForm() {
                 </div>
                 <br />
                 <select
+                    className='editTransaction__select'
                     id="category"
                     name="category"
                     onChange={handleCategoryChange}

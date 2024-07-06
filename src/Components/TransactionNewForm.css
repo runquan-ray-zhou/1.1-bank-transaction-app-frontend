@@ -6,6 +6,11 @@
     min-height: 85vh;
     margin: 0;
     padding: 0;
+
+    input {
+        padding: 5px;
+        width: 200px;
+    }
 }
 .newTransaction__label {
     margin-top: 10px;
@@ -23,8 +28,7 @@
     color: #DAD7CD;
     border-radius: 5px;
 }
-
-input {
-    padding: 5px;
-    width: 200px;
+.newTransaction__select {
+    width: 50%;
+    padding: 6px 0px;
 }
