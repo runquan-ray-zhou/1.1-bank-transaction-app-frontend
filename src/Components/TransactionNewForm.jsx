@@ -65,7 +65,6 @@ export default function TransactionNewForm() {
 
     return (
         <div>
-            New Transaction Form
             <form onSubmit={handleSubmit}>
                 <label htmlFor="date" >
                 Date

@@ -1,0 +1,28 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: #344E41;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 20px;
+    right: 0;
+    left: 0;
+    height: 50px;
+
+    button:hover{
+        color: #333533;
+    } 
+
+    button {
+        margin: 0;
+        padding: 0;
+        font-size: 1.1em;
+        background: transparent;
+        color: #DAD7CD;
+        border: none;
+        cursor: pointer;
+    }
+}

@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
+import "./NavBar.css"
 
 export default function NavBar() {
   return (
     <nav>
-      <h1>
-        <Link to="/transactions">All Transactions</Link>
-      </h1>
-      <button>
-        <Link to="/transactions/new">New Transaction</Link>
-      </button>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/transactions">
+          <button>All Transactions</button>
+        </Link>
+        <Link to="/transactions/new">
+          <button>New Transaction</button>
+        </Link>
+        <Link to="/about">
+          <button>About</button>
+        </Link>
     </nav>
   );
 }
