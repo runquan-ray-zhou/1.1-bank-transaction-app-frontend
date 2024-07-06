@@ -31,6 +31,10 @@ export default function TransactionNewForm() {
     function handleDateChange(event) {
         setTransactionDetails({...transaction, [event.target.id]: event.target.value})
     }
+
+    function handleCategoryChange(event) {
+        setTransactionDetails({...transaction, [event.target.id]: event.target.value})
+    }
     
 
     function addTransaction() {
@@ -130,14 +134,15 @@ export default function TransactionNewForm() {
                 Category
                 </div>
                 <br />
-                    <input
+                    <select
                     id="category"
-                    type="text"
-                    value={transaction.category}
-                    onChange={handleTextChange}
-                    placeholder='category'
+                    name="category"
+                    onChange={handleCategoryChange}
                     required
-                    />
+                    >
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                    </select>
                 </label>
                 <br />
                 <button type="submit" className='newTransaction__button'>Add New Transaction</button>

@@ -31,6 +31,35 @@ export default function TransactionEditForm() {
         setTransactionDetails({...transaction, [event.target.id]: event.target.value})
     }
 
+    function handleCategoryChange(event) {
+        setTransactionDetails({...transaction, [event.target.id]: event.target.value})
+    }
+    
+    function revertDate(str) {
+
+        const monthObj = {
+            "Jan" : "01",
+            "Feb" : "02",
+            "Mar" : "03",
+            "Apr" : "04",
+            "May" : "05",
+            "Jun" : "06",
+            "Jul" : "07",
+            "Aug" : "08",
+            "Sep" : "09",
+            "Oct" : "10",
+            "Nov" : "11",
+            "Dec" : "12",
+        }
+        
+        let splitDate = str.split(" ")
+        if (str.includes("-")) {
+            return str
+        } else {
+            return splitDate[2] + "-" + monthObj[splitDate[0]] + "-" + splitDate[1].slice(0,-1)
+        }
+    }
+
       useEffect(() => {
         fetch(`${API}/transactions/${id}`)
         .then((res) => {
@@ -81,7 +110,7 @@ export default function TransactionEditForm() {
                     <input
                     id="date"
                     type="date"
-                    value={transaction.date}
+                    value={transaction.date.length ? revertDate(transaction.date) : null}
                     onChange={handleDateChange}
                     placeholder="date"
                     required
@@ -138,14 +167,15 @@ export default function TransactionEditForm() {
                 Category
                 </div>
                 <br />
-                    <input
+                <select
                     id="category"
-                    type="text"
-                    value={transaction.category}
-                    onChange={handleTextChange}
-                    placeholder='category'
+                    name="category"
+                    onChange={handleCategoryChange}
                     required
-                    />
+                    >
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                    </select>
                 </label>
                 <br />
                 <button type="submit" className='editTransaction__button'>Edit Transaction</button>
