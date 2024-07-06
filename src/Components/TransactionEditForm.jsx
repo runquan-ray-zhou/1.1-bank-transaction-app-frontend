@@ -34,6 +34,15 @@ export default function TransactionEditForm() {
     function handleCategoryChange(event) {
         setTransactionDetails({...transaction, [event.target.id]: event.target.value})
     }
+
+    function handleCheckboxChange(event){
+        if (event.target.id === "withdraw") {
+            setTransactionDetails({ ...transaction, amount: transaction.amount > 0 ? transaction.amount * -1 : transaction.amount * 1 });
+        }
+        if (event.target.id === "deposit") {
+            setTransactionDetails({ ...transaction, amount: transaction.amount < 0 ? transaction.amount * -1 : transaction.amount * 1});
+        }
+    };
     
     function revertDate(str) {
 
@@ -59,6 +68,8 @@ export default function TransactionEditForm() {
             return splitDate[2] + "-" + monthObj[splitDate[0]] + "-" + splitDate[1].slice(0,-1)
         }
     }
+
+    console.log(transaction.date)
 
       useEffect(() => {
         fetch(`${API}/transactions/${id}`)
@@ -141,13 +152,44 @@ export default function TransactionEditForm() {
                     id="amount"
                     value={transaction.amount}
                     type="number"
-                    min="0"
                     onChange={handleNumberChange}
                     placeholder="amount"
                     required
                     />
                 </label>
                 <br />
+                <div className='editTransaction__deposit-withdraw'>
+                <label htmlFor="deposit">
+                <div className="editTransaction__label">
+                Deposit
+                </div> 
+                <br />
+                    <input
+                    id="deposit"
+                    name="checkbox"
+                    type="checkbox"
+                    className='checkbox'
+                    onChange={handleCheckboxChange}
+                    checked={transaction.amount > 0}
+                    />
+                </label>
+                <br />
+                <label htmlFor="withdraw">
+                <div className="editTransaction__label">
+                Withdraw
+                </div> 
+                <br />
+                    <input
+                    id="withdraw"
+                    name="checkbox"
+                    type="checkbox"
+                    className='checkbox'
+                    onChange={handleCheckboxChange}
+                    checked={transaction.amount < 0}
+                    />
+                </label>
+                <br />
+                </div>
                 <label htmlFor="from">
                 <div className='editTransaction__label'>
                 From

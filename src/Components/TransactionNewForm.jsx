@@ -20,6 +20,7 @@ export default function TransactionNewForm() {
         }
     )
 
+// Functions For Input Change 
     function handleTextChange(event){
         setTransactionDetails({...transaction, [event.target.id]: event.target.value})
     } 
@@ -45,7 +46,7 @@ export default function TransactionNewForm() {
         }
     };
     
-
+// Function To Add Transaction
     function addTransaction() {
         fetch(`${API}/transactions`, {
             method: "POST",
@@ -60,6 +61,7 @@ export default function TransactionNewForm() {
         .catch((error) => console.error(error))
     }
 
+// Function For Submitting Form
     function handleSubmit(e) {
         e.preventDefault()
         addTransaction()
@@ -117,7 +119,6 @@ export default function TransactionNewForm() {
                     id="amount"
                     value={transaction.amount}
                     type="number"
-                    min="0"
                     onChange={handleNumberChange}
                     placeholder="amount"
                     required
