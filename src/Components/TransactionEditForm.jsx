@@ -141,6 +141,7 @@ export default function TransactionEditForm() {
                     id="amount"
                     value={transaction.amount}
                     type="number"
+                    min="0"
                     onChange={handleNumberChange}
                     placeholder="amount"
                     required

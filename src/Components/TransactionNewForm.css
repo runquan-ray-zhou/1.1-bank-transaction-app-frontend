@@ -32,3 +32,11 @@
     width: 50%;
     padding: 6px 0px;
 }
+.newTransaction__deposit-withdraw{
+    display: flex;
+    justify-content: center;
+}
+.checkbox {
+    width: 25px;
+    height: 25px;
+}

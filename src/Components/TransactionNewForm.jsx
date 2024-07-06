@@ -35,6 +35,15 @@ export default function TransactionNewForm() {
     function handleCategoryChange(event) {
         setTransactionDetails({...transaction, [event.target.id]: event.target.value})
     }
+
+    function handleCheckboxChange(event){
+        if (event.target.id === "withdraw") {
+            setTransactionDetails({ ...transaction, amount: transaction.amount > 0 ? transaction.amount * -1 : transaction.amount * 1 });
+        }
+        if (event.target.id === "deposit") {
+            setTransactionDetails({ ...transaction, amount: transaction.amount < 0 ? transaction.amount * -1 : transaction.amount * 1});
+        }
+    };
     
 
     function addTransaction() {
@@ -108,12 +117,45 @@ export default function TransactionNewForm() {
                     id="amount"
                     value={transaction.amount}
                     type="number"
+                    min="0"
                     onChange={handleNumberChange}
                     placeholder="amount"
                     required
                     />
                 </label>
                 <br />
+                <div className='newTransaction__deposit-withdraw'>
+                <label htmlFor="deposit">
+                <div className="newTransaction__label">
+                Deposit
+                </div> 
+                <br />
+                    <input
+                    id="deposit"
+                    name="checkbox"
+                    type="checkbox"
+                    className='checkbox'
+                    onChange={handleCheckboxChange}
+                    checked={transaction.amount > 0}
+                    />
+                </label>
+                <br />
+                <label htmlFor="withdraw">
+                <div className="newTransaction__label">
+                Withdraw
+                </div> 
+                <br />
+                    <input
+                    id="withdraw"
+                    name="checkbox"
+                    type="checkbox"
+                    className='checkbox'
+                    onChange={handleCheckboxChange}
+                    checked={transaction.amount < 0}
+                    />
+                </label>
+                <br />
+                </div>
                 <label htmlFor="from">
                 <div className='newTransaction__label'>
                 From
