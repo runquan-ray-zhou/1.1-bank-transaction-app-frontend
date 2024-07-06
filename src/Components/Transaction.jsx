@@ -11,7 +11,7 @@ export default function Transaction({ transaction }) {
         fetch(`${API}/transactions/${transaction.id}`, {
             method: "DELETE"
         })
-        .then(() => navigate("/transactions"))
+        .then(() => navigate(0))
         .catch((error) => console.error(error))
     }
 
