@@ -1,6 +1,10 @@
 .Transaction {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
+    margin: 10px;
+    td {
+        width: 200px;
+    }
 }
