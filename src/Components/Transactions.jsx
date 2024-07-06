@@ -18,6 +18,7 @@ export default function Transactions() {
     return (
         <div>
             <h1>Bank Account Total: {transactions.length ? transactions.reduce((a, b) => a + b.amount, 0) : 0}</h1>
+            <hr />
             {transactions.map(transaction => {
                 return <Transaction key={transaction.id} transaction={transaction}/>
             })}

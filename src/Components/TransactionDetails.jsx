@@ -26,12 +26,18 @@ export default function TransactionDetails() {
 
     return (
         <div>
-            <h1>Transaction Details</h1>
+            <div>
+                <h1>Transaction Details</h1>
+            </div>
+            <hr />
+            <p>{transaction.amount}</p>
             <p>{transaction.date}</p>
             <p>{transaction.item_name}</p>
-            <p>{transaction.amount}</p>
             <p>{transaction.from}</p>
             <p>{transaction.category}</p>
+            <Link to={`/transactions`}>
+            <button>Back</button>
+            </Link>
             <Link to={`/transactions/${id}/edit`}>
             <button>Edit</button>
             </Link>

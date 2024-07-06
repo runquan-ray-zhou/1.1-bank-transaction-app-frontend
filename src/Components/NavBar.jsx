@@ -4,7 +4,7 @@ import "./NavBar.css"
 export default function NavBar() {
   return (
     <nav>
-        <Link to="/">
+        <Link to="/home">
           <button>Bank Bank</button>
         </Link>
         <Link to="/transactions">
