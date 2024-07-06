@@ -1,24 +1,17 @@
 import { useEffect, useState } from 'react'
 import { useNavigate  } from 'react-router-dom'
+import { nanoid } from 'nanoid'
 import "./TransactionNewForm.css"
 
 const API = import.meta.env.VITE_API_URL
 
 export default function TransactionNewForm() {
 
-    const [ transactions, setTransactions ] = useState([])
-
-    useEffect(() => {
-        fetch(`${API}/transactions`)
-        .then((response) => response.json())
-        .then((responseJSON) => setTransactions(responseJSON))
-        .catch((error) => console.error(error));
-    }, [])
-
     let navigate = useNavigate()
 
     const [transaction, setTransactionDetails] = useState(
         {
+            id: nanoid(7),
             item_name: "",
             amount: 0,
             date: "",
@@ -44,17 +37,17 @@ export default function TransactionNewForm() {
             }
         })
         .then(() => {
-            navigate(`/transactions/${transactions.length + 1}`)
+            navigate(`/transactions/${transaction.id}`)
         })
         .catch((error) => console.error(error))
     }
-
 
     function handleSubmit(e) {
         e.preventDefault()
         addTransaction()
         setTransactionDetails(
             {
+                id: nanoid(7),
                 item_name: "",
                 amount: 0,
                 date: "",
