@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate  } from 'react-router-dom'
+import "./TransactionEditForm.css"
 
 const API = import.meta.env.VITE_API_URL
 
@@ -66,11 +67,12 @@ export default function TransactionEditForm() {
     }
 
     return (
-        <div>
-            Transaction Edit Form
+        <div className='editTransaction'>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="date" >
+                <div className='editTransaction__label'>
                 Date
+                </div>
                 <br />
                     <input
                     id="date"
@@ -83,7 +85,9 @@ export default function TransactionEditForm() {
                 </label>
                 <br />
                 <label htmlFor="item_name">
+                <div className='editTransaction__label'>
                 Name
+                </div>
                 <br />
                     <input
                     id="item_name"
@@ -96,7 +100,9 @@ export default function TransactionEditForm() {
                 </label>
                 <br />
                 <label htmlFor="amount">
+                <div className='editTransaction__label'>
                 Amount
+                </div>
                 <br />
                     <input
                     id="amount"
@@ -109,7 +115,9 @@ export default function TransactionEditForm() {
                 </label>
                 <br />
                 <label htmlFor="from">
+                <div className='editTransaction__label'>
                 From
+                </div>
                 <br />
                     <input
                     id="from"
@@ -122,7 +130,9 @@ export default function TransactionEditForm() {
                 </label>
                 <br />
                 <label htmlFor="category">
+                <div className='editTransaction__label'>
                 Category
+                </div>
                 <br />
                     <input
                     id="category"
@@ -134,7 +144,7 @@ export default function TransactionEditForm() {
                     />
                 </label>
                 <br />
-                <button type="submit">Edit Transaction</button>
+                <button type="submit" className='editTransaction__button'>Edit Transaction</button>
             </form>
         </div>
     )
