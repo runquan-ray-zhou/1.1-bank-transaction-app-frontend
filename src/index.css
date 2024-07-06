@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    font-family: monospace;
+    height: 100%;
+    overflow: auto;
+    margin: 10;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  

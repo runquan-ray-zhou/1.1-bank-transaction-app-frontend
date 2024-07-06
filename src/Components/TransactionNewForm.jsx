@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate  } from 'react-router-dom'
+import "./TransactionNewForm.css"
 
 const API = import.meta.env.VITE_API_URL
 
@@ -64,10 +65,12 @@ export default function TransactionNewForm() {
     }
 
     return (
-        <div>
+        <div className='newTransaction'>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="date" >
+                <div className='newTransaction__label'>
                 Date
+                </div>
                 <br />
                     <input
                     id="date"
@@ -80,7 +83,9 @@ export default function TransactionNewForm() {
                 </label>
                 <br />
                 <label htmlFor="item_name">
+                <div className='newTransaction__label'>
                 Name
+                </div>
                 <br />
                     <input
                     id="item_name"
@@ -93,7 +98,9 @@ export default function TransactionNewForm() {
                 </label>
                 <br />
                 <label htmlFor="amount">
+                <div className='newTransaction__label'>
                 Amount
+                </div>
                 <br />
                     <input
                     id="amount"
@@ -106,7 +113,9 @@ export default function TransactionNewForm() {
                 </label>
                 <br />
                 <label htmlFor="from">
+                <div className='newTransaction__label'>
                 From
+                </div>
                 <br />
                     <input
                     id="from"
@@ -119,7 +128,9 @@ export default function TransactionNewForm() {
                 </label>
                 <br />
                 <label htmlFor="category">
+                <div className='newTransaction__label'>
                 Category
+                </div>
                 <br />
                     <input
                     id="category"
@@ -131,7 +142,7 @@ export default function TransactionNewForm() {
                     />
                 </label>
                 <br />
-                <button type="submit">Add New Transaction</button>
+                <button type="submit" className='newTransaction__button'>Add New Transaction</button>
             </form>
         </div>
     )

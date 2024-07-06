@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <nav>
         <Link to="/">
-          <button>Home</button>
+          <button>Bank Bank</button>
         </Link>
         <Link to="/transactions">
           <button>All Transactions</button>
