@@ -42,8 +42,8 @@ function App() {
             />} />
             <Route path="/transactions/new" element={<New />} />
             <Route path="/transactions/:id" element={<Show 
-            setAmountColor={setAmountColor}
-            setTotalAmount={setTotalAmount}
+              setAmountColor={setAmountColor}
+              setTotalAmount={setTotalAmount}
             />} />
             <Route path="/transactions/:id/edit" element={<Edit />} />
             <Route path="*" element={<Error />} />

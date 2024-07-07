@@ -22,7 +22,7 @@ Standard Goals
 1. [x]Each Route has appropriate error handling using `if/else` or `try/catch` blocks.
 11. [x]All pages should include the same navigation bar, which includes the name of the application and a button to create a new transaction.
 1. [x]You should have an Index page that presents all of the transactions in your model.
-1. [ ]After clicking on a single transaction, you should be brought to a Show page which includes more detailed information about the specific transaction.
+1. [x]After clicking on a single transaction, you should be brought to a Show page which includes more detailed information about the specific transaction.
 1. [x]When the button in the navigation bar to create a new transaction is clicked, you should be brought to a new page that includes a form to create a new transaction.
 1. [x]Forms should be properly labeled and the `type` of inputs should be properly set. For example, an input that requires a `number` should have type `number`, not `text`.
 1. [x]When a new transaction form is submitted, the transaction should be created in the backend and the user should be brought to that new transaction's Show page.
