@@ -4,7 +4,7 @@ export default function About() {
     
     return (
         <div className="about">
-            <p>Bankster by: Runquan (Ray) Zhou</p>
+            <p>BankBankster by: Runquan (Ray) Zhou</p>
         </div>
     )
 }

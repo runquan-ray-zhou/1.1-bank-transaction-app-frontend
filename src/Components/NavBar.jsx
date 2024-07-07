@@ -5,7 +5,7 @@ export default function NavBar({ totalAmount, amountColor }) {
 
   return (
     <nav>
-      <p style={{color:amountColor}}>${totalAmount}</p>
+      <span><p style={{color:amountColor}}>{totalAmount < 0 ? "-" : ""}${totalAmount < 0 ? totalAmount * -1 : totalAmount}</p></span>
         <Link to="/">
           <button>🏦</button>
         </Link>

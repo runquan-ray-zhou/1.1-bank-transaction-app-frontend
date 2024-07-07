@@ -14,16 +14,16 @@ nav {
 
     p{
         font-size: 1.2em;
+        font-weight: 900;
+        background: #DAD7CD;
+        padding: 5px;
+        border-radius: 10px;
     }
-
-    button:hover{
-        color: #A3B18A;
-    } 
 
     button {
         margin: 0;
         padding: 0;
-        font-size: 1.1em;
+        font-size: 1.3em;
         background: transparent;
         color: #DAD7CD;
         border: none;

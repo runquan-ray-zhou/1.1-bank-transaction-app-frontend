@@ -14,7 +14,7 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-            <span>Bankster</span>
+            <span>Bank Bankster</span>
             <div className="login-button__container">
                 <div className="edition">
                 <p>2024 EDITION</p>

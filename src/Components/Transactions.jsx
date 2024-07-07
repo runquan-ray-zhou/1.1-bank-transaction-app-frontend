@@ -35,10 +35,13 @@ export default function Transactions({ amountColor, setAmountColor,  totalAmount
             <div className='Transactions__total-amount'>
                 <span>Bank Account Total:</span>
                 <span>
-                    <p>$</p>
+                    <p className='Transactions__total-amount-number'style={{color:amountColor}}>{totalAmount < 0 ? "-" : ""}</p>
                 </span>
                 <span>
-                    <p className='Transactions__total-amount-number'style={{color:amountColor}}>{transactions.length ? totalAmount : 0}</p>
+                    <p className='Transactions__total-amount-number'style={{color:amountColor}}>$</p>
+                </span>
+                <span>
+                    <p className='Transactions__total-amount-number'style={{color:amountColor}}>{totalAmount < 0 ? totalAmount * -1 : totalAmount}</p>
                 </span>
             </div>
             <hr />

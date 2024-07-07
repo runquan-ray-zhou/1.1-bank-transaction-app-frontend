@@ -30,7 +30,7 @@ export default function Transaction({ transaction }) {
             <p>{transaction.category}</p>
             </span>
             <span>
-            <p>{transaction.amount}</p>
+            <p style={{color: transaction.amount < 0 ? "red" : "green"}}>{transaction.amount < 0 ? "-" : ""}${transaction.amount < 0 ? transaction.amount * -1 : transaction.amount}</p>
             </span>
             <span>
             <button onClick={ handleDelete }>Delete</button>
