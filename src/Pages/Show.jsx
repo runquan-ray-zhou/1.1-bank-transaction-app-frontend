@@ -1,9 +1,9 @@
 import TransactionDetails from "../Components/TransactionDetails";
 
-export default function Show() {
+export default function Show({ setTotalAmount, setAmountColor }) {
   return (
     <div className="Show">
-      <TransactionDetails />
+      <TransactionDetails setTotalAmount={setTotalAmount} setAmountColor={setAmountColor}/>
     </div>
   );
 }

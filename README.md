@@ -34,7 +34,7 @@ Standard Goals
 Stretch Goals
 
 - [x]Make `categories` a `select` HTML element on the new/edit forms to allow the user to choose from a pull-down menu from the available categories, and allow for the addition of new categories to the options menu.
-- [ ]Display the bank account total in the nav bar (or similar component that is visible on all views), instead of just on the index page.
+- [x]Display the bank account total in the nav bar (or similar component that is visible on all views), instead of just on the index page.
 - [ ]Add helpful errors to users when they try to create or edit items with invalid data
 - [x]Use the date object for the date, instead of just a string. Be sure to format it on the front-end to make it human-readable. Try using the `date` input type as well.
 - [x]Use a checkbox, separate input or similar strategy to allow the user to select whether the transaction is a deposit or withdrawal. If it is a withdrawal, make sure the value subtracts and deposit values add. By default, your user would have be entering values that are positive or negative.

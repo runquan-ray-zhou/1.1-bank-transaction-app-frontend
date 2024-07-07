@@ -18,8 +18,6 @@ import NavBar from "./Components/NavBar";
 
 function App() {
 
-  const [ transactions, setTransactions ] = useState([])
-
   const [ amountColor, setAmountColor ] = useState("")
 
   const [ totalAmount, setTotalAmount ] = useState(0)
@@ -39,13 +37,14 @@ function App() {
             <Route path="/transactions" element={<Index 
               totalAmount={totalAmount}
               setTotalAmount={setTotalAmount}
-              transactions={transactions} 
-              setTransactions={setTransactions} 
               amountColor={amountColor} 
               setAmountColor={setAmountColor}
             />} />
             <Route path="/transactions/new" element={<New />} />
-            <Route path="/transactions/:id" element={<Show />} />
+            <Route path="/transactions/:id" element={<Show 
+            setAmountColor={setAmountColor}
+            setTotalAmount={setTotalAmount}
+            />} />
             <Route path="/transactions/:id/edit" element={<Edit />} />
             <Route path="*" element={<Error />} />
           </Routes>

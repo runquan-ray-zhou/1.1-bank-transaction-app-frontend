@@ -4,11 +4,9 @@ import Transaction from './Transaction'
 
 const API = import.meta.env.VITE_API_URL
 
-export default function Transactions({ transactions, setTransactions, amountColor, setAmountColor,  totalAmount, setTotalAmount }) {
+export default function Transactions({ amountColor, setAmountColor,  totalAmount, setTotalAmount }) {
 
-    // const [ transactions, setTransactions ] = useState([])
-
-    // const [ amountColor, setAmountColor ] = useState("")
+    const [ transactions, setTransactions ] = useState([])
 
     useEffect(() => {
         const transactionsTotal = transactions.reduce((a, b) => a + b.amount, 0)
@@ -66,7 +64,13 @@ export default function Transactions({ transactions, setTransactions, amountColo
             </div>
             <hr />
             {transactions.map(transaction => {
-                return <Transaction key={transaction.id} transaction={transaction}/>
+                return <Transaction 
+                key={transaction.id} 
+                transaction={transaction}
+                transactions={transactions}
+                setTotalAmount={setTotalAmount}
+                setAmountColor={setAmountColor}
+                />
             })}
         </div>
     )

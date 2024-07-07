@@ -3,9 +3,10 @@ import { Link, useParams, useNavigate } from "react-router-dom"
 
 const API = import.meta.env.VITE_API_URL
 
-export default function TransactionDetails() {
+export default function TransactionDetails({ setTotalAmount, setAmountColor }) {
 
     const [ transaction, setTransaction ] = useState({})
+    const [ transactions, setTransactions ] = useState([])
     let { id } = useParams()
     let navigate = useNavigate()
 
@@ -23,6 +24,28 @@ export default function TransactionDetails() {
         .then(() => navigate("/transactions"))
         .catch((error) => console.error(error))
     }
+
+    useEffect(() => {
+        const transactionsTotal = transactions.reduce((a, b) => a + b.amount, 0)
+        if (transactionsTotal > 500) {
+            setAmountColor("green")
+        } else if (transactionsTotal < 500 && transactionsTotal > 0) {
+            setAmountColor("yellow")
+        } else {
+            setAmountColor("red")
+        }
+    },[transactions])
+
+    useEffect(() => {
+        fetch(`${API}/transactions`)
+        .then((response) => response.json())
+        .then((responseJSON) => setTransactions(responseJSON))
+        .catch((error) => console.error(error));
+    }, [])
+
+    useEffect(() => {
+        setTotalAmount(transactions.reduce((a, b) => a + b.amount, 0).toFixed(2))
+    },[transactions])
 
     return (
         <div>
