@@ -1,0 +1,47 @@
+.Details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    hr {
+        width: 100%;
+    }
+    span{
+        p{
+            width: 150px;
+        }
+
+        display: flex;
+    }
+}
+
+.Details__values {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.Details__buttons{
+    display: flex;
+    gap:20px;
+    
+    button{
+        width: 100%;
+        font-size: 2em;
+        margin-top: 40px;
+        padding: 10px 61px 10px 61px;
+        border: none;
+        background-color: #344E41;
+        cursor: pointer;
+        color: #DAD7CD;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    .Details__buttons {
+        display: block;
+    }
+}
+

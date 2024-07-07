@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from "react-router-dom"
+import "./TransactionDetails.css"
 
 const API = import.meta.env.VITE_API_URL
 
@@ -48,23 +49,37 @@ export default function TransactionDetails({ setTotalAmount, setAmountColor }) {
     },[transactions])
 
     return (
-        <div>
-            <div>
+        <div className='Details'>
+            <div className='Details__title'>
                 <h1>Transaction Details</h1>
             </div>
             <hr />
-            <p>{transaction.amount}</p>
-            <p>{transaction.date}</p>
-            <p>{transaction.item_name}</p>
-            <p>{transaction.from}</p>
-            <p>{transaction.category}</p>
-            <Link to={`/transactions`}>
-            <button>Back</button>
-            </Link>
-            <Link to={`/transactions/${id}/edit`}>
-            <button>Edit</button>
-            </Link>
-            <button onClick={ handleDelete }>Delete</button>
+            <div className='Details__values'>
+                <span>
+                    <p>Amount:</p><p>{transaction.amount}</p>
+                </span>
+                <span>
+                    <p>Transaction Date:</p><p>{transaction.date}</p>
+                </span>
+                <span>
+                    <p>Name:</p><p>{transaction.item_name}</p>
+                </span>
+                <span>
+                    <p>From:</p><p>{transaction.from}</p>
+                </span>
+                <span>
+                    <p>Category:</p><p>{transaction.category}</p>
+                </span>
+            </div>
+            <div className='Details__buttons'>
+                <Link to={`/transactions`}>
+                <button>Back</button>
+                </Link>
+                <Link to={`/transactions/${id}/edit`}>
+                <button>Edit</button>
+                </Link>
+                <button onClick={ handleDelete }>Delete</button>
+            </div>
         </div>
     )
 }
