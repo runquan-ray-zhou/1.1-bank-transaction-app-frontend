@@ -12,6 +12,10 @@ nav {
     left: 0;
     height: 50px;
 
+    p{
+        font-size: 1.2em;
+    }
+
     button:hover{
         color: #A3B18A;
     } 

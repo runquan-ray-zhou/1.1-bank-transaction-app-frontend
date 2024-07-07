@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import "./Login.css"
-// import wifi from '../../assets/wifi.png';
-
 
 export default function Login() {
     

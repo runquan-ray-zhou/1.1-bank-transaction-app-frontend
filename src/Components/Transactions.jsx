@@ -4,11 +4,11 @@ import Transaction from './Transaction'
 
 const API = import.meta.env.VITE_API_URL
 
-export default function Transactions() {
+export default function Transactions({ transactions, setTransactions, amountColor, setAmountColor,  totalAmount, setTotalAmount }) {
 
-    const [ transactions, setTransactions ] = useState([])
+    // const [ transactions, setTransactions ] = useState([])
 
-    const [ amountColor, setAmountColor ] = useState("")
+    // const [ amountColor, setAmountColor ] = useState("")
 
     useEffect(() => {
         const transactionsTotal = transactions.reduce((a, b) => a + b.amount, 0)
@@ -19,7 +19,7 @@ export default function Transactions() {
         } else {
             setAmountColor("red")
         }
-    },[transactions.length])
+    },[transactions])
 
     useEffect(() => {
         fetch(`${API}/transactions`)
@@ -27,6 +27,10 @@ export default function Transactions() {
         .then((responseJSON) => setTransactions(responseJSON))
         .catch((error) => console.error(error));
     }, [])
+
+    useEffect(() => {
+        setTotalAmount(transactions.reduce((a, b) => a + b.amount, 0).toFixed(2))
+    },[transactions])
 
     return (
         <div className='Transactions'>
@@ -36,7 +40,7 @@ export default function Transactions() {
                     <p>$</p>
                 </span>
                 <span>
-                    <p className='Transactions__total-amount-number'style={{color:amountColor}}>{transactions.length ? transactions.reduce((a, b) => a + b.amount, 0).toFixed(2): 0}</p>
+                    <p className='Transactions__total-amount-number'style={{color:amountColor}}>{transactions.length ? totalAmount : 0}</p>
                 </span>
             </div>
             <hr />

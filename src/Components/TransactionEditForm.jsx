@@ -69,8 +69,6 @@ export default function TransactionEditForm() {
         }
     }
 
-    console.log(transaction.date)
-
       useEffect(() => {
         fetch(`${API}/transactions/${id}`)
         .then((res) => {

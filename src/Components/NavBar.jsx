@@ -1,20 +1,25 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css"
 
-export default function NavBar() {
+export default function NavBar({ totalAmount, amountColor }) {
+
   return (
     <nav>
+      <p style={{color:amountColor}}>${totalAmount}</p>
+        <Link to="/">
+          <button>🏦</button>
+        </Link>
         <Link to="/home">
-          <button>Home</button>
+          <button>🏠</button>
         </Link>
         <Link to="/transactions">
-          <button>All Transactions</button>
+          <button>📜</button>
         </Link>
         <Link to="/transactions/new">
-          <button>New Transaction</button>
+          <button>🆕</button>
         </Link>
         <Link to="/about">
-          <button>About</button>
+          <button>ℹ️</button>
         </Link>
     </nav>
   );
