@@ -6,7 +6,9 @@
 
 - This is the frontend to the Bank Bankster Bank Transaction Web App
 - This frontend web app is build using React, Vite, along with few other npm packages.
-- <a href="https://bankbankster.netlify.app/">Live link</a>
+- <a href="https://bankbankster.netlify.app/">Web app live link</a>
+- <a href="https://one-1-bank-transaction-app-backend.onrender.com/">Link to backend server</a>
+- <a href="https://github.com/runquan-ray-zhou/1.1-bank-transaction-app-backend">Link to backend github repository</a>
 
 
 ## Table of Contents
