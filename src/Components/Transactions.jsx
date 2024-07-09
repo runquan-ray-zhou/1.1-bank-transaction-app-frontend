@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import "./Transactions.css"
 import Transaction from './Transaction'
 
 const API = import.meta.env.VITE_API_URL
 
 export default function Transactions({ amountColor, setAmountColor,  totalAmount, setTotalAmount }) {
+
+    let navigate = useNavigate()
 
     const [ transactions, setTransactions ] = useState([])
 
@@ -23,7 +26,10 @@ export default function Transactions({ amountColor, setAmountColor,  totalAmount
         fetch(`${API}/transactions`)
         .then((response) => response.json())
         .then((responseJSON) => setTransactions(responseJSON))
-        .catch((error) => console.error(error));
+        .catch((error) => {
+            navigate("/notfound")
+            console.error(error)
+        });
     }, [])
 
     useEffect(() => {

@@ -84,7 +84,10 @@ export default function TransactionEditForm() {
         .then((resJSON) => {
             setTransactionDetails(resJSON)
         })
-        .catch((error) => console.error(error))
+        .catch(() => {
+            navigate("/notfound")
+            console.error(error)
+        })
     },[])
 
     function updateTransaction() {
@@ -98,7 +101,10 @@ export default function TransactionEditForm() {
         .then(() => {
             navigate(`/transactions/${id}`)
         })
-        .catch((error) => console.error(error))
+        .catch(() => {
+            navigate("/notfound")
+            console.error(error)
+        })
     }
     
     function handleSubmit(e) {

@@ -65,7 +65,10 @@ export default function TransactionNewForm() {
         .then(() => {
             navigate(`/transactions/${transaction.id}`)
         })
-        .catch((error) => console.error(error))
+        .catch(() => {
+            navigate("/notfound")
+            console.error(error)
+        })
     }
 
 // Function For Submitting Form

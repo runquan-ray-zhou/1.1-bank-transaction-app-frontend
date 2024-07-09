@@ -15,15 +15,24 @@ export default function TransactionDetails({ setTotalAmount, setAmountColor }) {
         fetch(`${API}/transactions/${id}`)
         .then((response) => response.json())
         .then((responseJSON) => setTransaction(responseJSON))
-        .catch(() => navigate("/notfound"))
+        .catch(() => {
+            navigate("/notfound")
+            console.error(error)
+        })
     }, [id, navigate])
 
     function handleDelete() {
         fetch(`${API}/transactions/${id}`, {
             method: "DELETE"
         })
-        .then(() => navigate("/transactions"))
-        .catch((error) => console.error(error))
+        .then(() => {
+            alert("Transaction Deleted")
+            navigate("/transactions")
+        })
+        .catch(() => {
+            navigate("/notfound")
+            console.error(error)
+        })
     }
 
     useEffect(() => {
@@ -41,7 +50,10 @@ export default function TransactionDetails({ setTotalAmount, setAmountColor }) {
         fetch(`${API}/transactions`)
         .then((response) => response.json())
         .then((responseJSON) => setTransactions(responseJSON))
-        .catch((error) => console.error(error));
+        .catch((error) => {
+            navigate("/notfound")
+            console.error(error)
+        });
     }, [])
 
     useEffect(() => {
@@ -73,12 +85,12 @@ export default function TransactionDetails({ setTotalAmount, setAmountColor }) {
             </div>
             <div className='Details__buttons'>
                 <Link to={`/transactions`}>
-                <button>Back</button>
+                <button>📜</button>
                 </Link>
                 <Link to={`/transactions/${id}/edit`}>
-                <button>Edit</button>
+                <button>✍️</button>
                 </Link>
-                <button onClick={ handleDelete }>Delete</button>
+                <button onClick={ handleDelete }>❌</button>
             </div>
         </div>
     )
