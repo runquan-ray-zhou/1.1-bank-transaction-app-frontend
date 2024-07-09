@@ -1,6 +1,6 @@
 .Transactions__header {
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
     p {
         font-weight: 600;
@@ -17,6 +17,10 @@
 }
 .Transactions__total-amount-number {
     font-weight: 900;
+}
+.Transactions__amount {
+    display: flex;
+    justify-content: end;
 }
 
 @media (max-width: 767px) {

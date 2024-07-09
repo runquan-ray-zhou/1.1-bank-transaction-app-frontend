@@ -58,7 +58,7 @@ export default function Transactions({ amountColor, setAmountColor,  totalAmount
             <span className="Transactions__from">
                 <p>Type</p>
             </span>
-            <span>
+            <span className="Transactions__amount">
                 <p>Amount</p>
             </span>
             <span>
