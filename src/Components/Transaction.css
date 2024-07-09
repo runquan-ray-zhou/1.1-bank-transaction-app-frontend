@@ -25,7 +25,8 @@
 
 @media (max-width: 767px) {
     .Transaction__from, 
-    .Transaction__type {
+    .Transaction__type,
+    .Transaction__delete {
         display: none;
     }
 }

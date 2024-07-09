@@ -67,7 +67,7 @@ export default function Transactions({ amountColor, setAmountColor,  totalAmount
             <span className="Transactions__amount">
                 <p>Amount</p>
             </span>
-            <span>
+            <span className="Transactions__delete">
                 {" "}
             </span>
             </div>

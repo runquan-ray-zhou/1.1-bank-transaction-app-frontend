@@ -32,10 +32,17 @@
     width: 50%;
     padding: 6px 0px;
 }
-.newTransaction__deposit-withdraw{
+.newTransaction__deposit-withdraw {
     display: flex;
     justify-content: center;
 }
+
+.newTransaction__deposit,
+.newTransaction__withdraw{
+    display: flex;
+    flex-direction: column;
+}
+
 .checkbox {
     width: 25px;
     height: 25px;
