@@ -49,13 +49,13 @@ export default function Transactions({ amountColor, setAmountColor,  totalAmount
             <span>
                 <p>Date</p>
             </span>
-            <span>
+            <span className="Transactions__from">
                 <p>From</p>
             </span>
             <span>
                 <p>Description</p>
             </span>
-            <span>
+            <span className="Transactions__from">
                 <p>Type</p>
             </span>
             <span>

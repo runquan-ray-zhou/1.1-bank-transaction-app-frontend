@@ -11,3 +11,10 @@
         color: black;
     }
 }
+
+@media (max-width: 767px) {
+    .Transaction__from, 
+    .Transaction__type {
+        display: none;
+    }
+}

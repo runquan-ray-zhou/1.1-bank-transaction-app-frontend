@@ -18,3 +18,10 @@
 .Transactions__total-amount-number {
     font-weight: 900;
 }
+
+@media (max-width: 767px) {
+    .Transactions__from, 
+    .Transactions__type {
+        display: none;
+    }
+}

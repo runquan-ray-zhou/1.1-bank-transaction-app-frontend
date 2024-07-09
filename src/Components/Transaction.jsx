@@ -20,13 +20,13 @@ export default function Transaction({ transaction }) {
             <span>
             <p>{transaction.date}</p>
             </span>
-            <span>
+            <span className="Transaction__from">
             <p>{transaction.from}</p>
             </span>
             <span>
             <Link to={`/transactions/${transaction.id}`}>{transaction.item_name}</Link>
             </span>
-            <span>
+            <span className="Transaction__type">
             <p>{transaction.category}</p>
             </span>
             <span>
