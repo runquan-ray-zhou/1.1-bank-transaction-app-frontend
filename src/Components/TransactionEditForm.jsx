@@ -9,6 +9,8 @@ export default function TransactionEditForm() {
     let navigate = useNavigate()
     let { id } = useParams()
 
+    const [ display, setDisplay ] = useState("none") 
+
     const [transaction, setTransactionDetails] = useState(
         {
             item_name: "",
@@ -32,7 +34,12 @@ export default function TransactionEditForm() {
     }
 
     function handleCategoryChange(event) {
-        setTransactionDetails({...transaction, [event.target.id]: event.target.value})
+        if (event.target.value === "Other") {
+            setDisplay("block")
+        } else {
+            setDisplay("none")
+            setTransactionDetails({...transaction, [event.target.id]: event.target.value})
+        }
     }
 
     function handleCheckboxChange(event){
@@ -215,10 +222,29 @@ export default function TransactionEditForm() {
                     onChange={handleCategoryChange}
                     required
                     >
-                    <option value="Income">Income</option>
-                    <option value="Expense">Expense</option>
+                        <option>Please Select One</option>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                        <option>Other</option>
                     </select>
                 </label>
+                <br />
+                <div style={{display: display}}>
+                <label htmlFor='category'>
+                    <div className='editTransaction__label'>
+                    Enter Category
+                    </div>
+                <br />
+                <input
+                    id="category"
+                    type="text"
+                    value={transaction.category}
+                    onChange={handleTextChange}
+                    placeholder="Enter Category"
+                    required
+                    />
+                </label>
+                </div>
                 <br />
                 <button type="submit" className='editTransaction__button'>Edit Transaction</button>
             </form>
