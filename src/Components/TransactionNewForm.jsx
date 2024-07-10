@@ -135,38 +135,40 @@ export default function TransactionNewForm() {
                     />
                 </label>
                 <br />
-                <div className='newTransaction__deposit-withdraw'>
-                <label htmlFor="deposit">
-                <div className="newTransaction__label">
-                Deposit
-                </div> 
-                <br />
-                    <input
-                    id="deposit"
-                    name="checkbox"
-                    type="checkbox"
-                    className='checkbox'
-                    onChange={handleCheckboxChange}
-                    checked={transaction.amount > 0}
-                    />
-                </label>
-                <br />
-                <label htmlFor="withdraw">
-                <div className="newTransaction__label">
-                Withdraw
-                </div> 
-                <br />
-                    <input
-                    id="withdraw"
-                    name="checkbox"
-                    type="checkbox"
-                    className='checkbox'
-                    onChange={handleCheckboxChange}
-                    checked={transaction.amount < 0}
-                    />
-                </label>
-                <br />
+                <div className='newTransaction__deposit'>
+                    <label htmlFor="deposit">
+                    <div className="newTransaction__label">
+                    Deposit
+                    </div> 
+                    <br />
+                        <input
+                        id="deposit"
+                        name="checkbox"
+                        type="checkbox"
+                        className='checkbox'
+                        onChange={handleCheckboxChange}
+                        checked={transaction.amount > 0}
+                        />
+                    </label>
                 </div>
+                <br />
+                <div className='newTransaction__withdraw'>
+                    <label htmlFor="withdraw">
+                    <div className="newTransaction__label">
+                    Withdraw
+                    </div> 
+                    <br />
+                        <input
+                        id="withdraw"
+                        name="checkbox"
+                        type="checkbox"
+                        className='checkbox'
+                        onChange={handleCheckboxChange}
+                        checked={transaction.amount < 0}
+                        />
+                    </label>
+                </div>
+                <br />
                 <label htmlFor="from">
                 <div className='newTransaction__label'>
                 From

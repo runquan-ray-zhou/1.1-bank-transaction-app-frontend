@@ -12,11 +12,13 @@
         width: 200px;
     }
 }
+
 .newTransaction__label {
     margin-top: 10px;
     font-size: 1.8em;
     font-weight: 900;
 }
+
 .newTransaction__button {
     width: 100%;
     font-size: 2em;
