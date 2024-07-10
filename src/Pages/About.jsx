@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import "./About.css"
 import {
     Chart as ChartJS,
@@ -8,7 +9,8 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js';
-  import { Radar } from 'react-chartjs-2';
+
+import { Radar } from 'react-chartjs-2';
   
   ChartJS.register(
     RadialLinearScale,
@@ -19,21 +21,45 @@ import {
     Legend
   );
 
+  const API = import.meta.env.VITE_API_URL
+
   export default function About() {
+
+    const [ transactions, setTransactions ] = useState([])
+
+    useEffect(() => {
+        fetch(`${API}/transactions`)
+        .then((response) => response.json())
+        .then((responseJSON) => setTransactions(responseJSON))
+        .catch((error) => {
+            navigate("/notfound")
+            console.error(error)
+        });
+    }, [])
+
+    const labels = transactions.map(obj => obj.item_name)
     
+    const incomeData = transactions.map(obj => {
+        if (obj.amount > 0) {
+            return obj.amount
+        } else {
+            return 0
+        }
+    })
+
+    const expenseData = transactions.map(obj => {
+        if (obj.amount < 0) {
+            return obj.amount
+        } else {
+            return 0
+        }
+    })
+
     const data = {
-      labels: [
-        'Eating',
-        'Drinking',
-        'Sleeping',
-        'Designing',
-        'Coding',
-        'Cycling',
-        'Running'
-      ],
+        labels,
       datasets: [{
-        label: 'My First Dataset',
-        data: [65, 59, 90, 81, 56, 55, 40],
+        label: 'Expense',
+        data: expenseData,
         fill: true,
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
         borderColor: 'rgb(255, 99, 132)',
@@ -42,8 +68,8 @@ import {
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgb(255, 99, 132)'
       }, {
-        label: 'My Second Dataset',
-        data: [28, 48, 40, 19, 96, 27, 100],
+        label: 'Income',
+        data: incomeData,
         fill: true,
         backgroundColor: 'rgba(54, 162, 235, 0.2)',
         borderColor: 'rgb(54, 162, 235)',
