@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Login.css"
+import bankIcon from "../assets/bank-svgrepo-com1.svg"
 
 export default function Login() {
     
@@ -9,7 +10,7 @@ export default function Login() {
                 <div className="circle1">
                     <div className="circle2">
                         <div className="circle3">
-                        {/* <img src={wifi} alt="google icon" /> */}
+                        <img src={bankIcon} alt="bank icon" />
                         </div>
                     </div>
                 </div>
