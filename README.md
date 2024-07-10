@@ -55,4 +55,6 @@ You can go to the live site here:
 This web app uses:
 - <a href="https://www.npmjs.com/package/nanoid">nanoid version 3</a> package to generate random ids.
 - <a href="https://reactrouter.com/en/main">React Router version 6</a> package to enable client side routing.
+- <a href="https://www.chartjs.org/">chart.js version 4</a> package to display chart.
+- <a href="https://www.npmjs.com/package/react-chartjs-2">react-chartjs-2 version 5</a> package to use react components of Chart.js.
 
