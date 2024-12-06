@@ -1,7 +1,8 @@
 # Bank Bankster Bank Transaction Web App Frontend
 
-
 ## Description
+
+**Bank Bankster** is a modern web application designed to manage bank transactions seamlessly. This project is the frontend component of the Bank Bankster platform, providing an intuitive interface for users to track, analyze, and interact with their financial data. Built with React and Vite, the app leverages cutting-edge tools and libraries to ensure a smooth and engaging user experience.
 
 
 - This is the frontend to the Bank Bankster Bank Transaction Web App
